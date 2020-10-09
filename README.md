@@ -1,7 +1,9 @@
 # What I want to watch?
 
 ## Description
-Brief description of the project
+What I want to watch? is a film searcher to find different options according to your needs. There you could filter by different categories or if you are looking for a special film you just need to add the title and you will see all the details about it.
+
+Don't miss the oportunity to test it and to know which is your suitable film in different times. 
 
 
 ## MVP (DOM - CANVAS)
