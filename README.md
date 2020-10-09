@@ -6,7 +6,7 @@ What I want to watch? is a film searcher to find different options according to 
 Don't miss the oportunity to test it and to know which is your suitable film in different times. 
 
 
-## MVP (DOM - CANVAS)
+## MVP 
 MVP definition, deliverables and/or user stories:
 - Home: will include the header and a searcher to look for plain text or by categories.
 - App page: you will see the list of films that you are looking for
