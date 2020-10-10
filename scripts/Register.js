@@ -32,23 +32,38 @@ handleRepeatPasswordInput = (event) => {
 
 //Almacenar datos que hemos recogido en los métodos anteriores. Se ejecuta cuando el ususario envía el formulario 
 saveData = (event) => {
+//Previene el comportamiento por default del evento y no permite que la página cargue de nuevo
+    event.preventDefault();
+
     const name = this.nameInput.value;
     const lastName = this.lastNameInput.value;
     const email = this.emailInput.value;
     const password = this.passwordInput.value;
 
-    //Función para crear el usuario
-    function createUser (name, lastName, email, password){
-        const userObj = {
-            name: name,
-            lastName: lastName,
-            email: email,
-            password: password,
-        }
-        return userObj;
-    }
+    //Función para crear el usuario. Lo comentamos porque hemos creado la clase User en User.js
+    // function createUser (name, lastName, email, password){
+    //     const userObj = {
+    //         name: name,
+    //         lastName: lastName,
+    //         email: email,
+    //         password: password,
+    //     }
+    //     return userObj;
+    // }
 
-    const newUser = createUser (name, lastName, email, password)
+    // const newUser = createUser (name, lastName, email, password)
+
+    const newUser = new User(name, lastName, email, password);
+
+// Guardaremos el usuario en la base de datos
+//database.createNewUser = (newUser);
+
+//Vaciar formulario
+this.nameInput.value = '';
+this.lastNameInput.value = '';
+this.emailInput.value = '';
+this.passwordInput.value ='';
+this.repeatPasswordInput.value = '';
 
 }
 
