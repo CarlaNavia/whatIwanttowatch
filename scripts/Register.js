@@ -1,8 +1,8 @@
-"use strict"
+"use strict";
 
 class Register {
 
-/* Definir todos los valores del formulario */
+// Definir todos los valores del formulario
 
     constructor(){ 
         this.nameInput = document.querySelector("#name");
@@ -19,15 +19,39 @@ class Register {
 
     handleEmailInput = (event) => {
         const email = event.target.value;
-        console.log(email)
+        //Invocaremos al objeto validator y después a su método validateValidEmail
+        validator.validateValidEmail(email);
+        //Ver si hay algún error
+        
+        const errorsObj = validator.getErrors();
+        //Si no hay errores (si el email es válido), el email será único
+        if (!errorsObj.invalidEmailError){
+            validator.validateUniqueEmail(email)
+        }
+        //Enviar errores en caso de que los haya
+        this.setErrorMessages();
     }
 
     handlePasswordInput = (event) => {
         const password = event.target.value;
+
+        const repeatPassword = this.repeatPasswordInput.value;
+        //Invocamos al objeto validator para verificar las contraseñas
+        validator.validatePassword(password);
+        validator.validatePasswordRepeat(password, repeatPassword);
+
+        this.setErrorMessages();
     }
 
     handleRepeatPasswordInput = (event) => {
         const repeatPassword = event.target.value;
+
+        const password = this.passwordInput.value;
+
+        validator.validatePasswordRepeat(password, repeatPassword);
+        validator.validatePassword(password)
+
+        this.setErrorMessages();
     }
 
     //Almacenar datos que hemos recogido en los métodos anteriores. Se ejecuta cuando el ususario envía el formulario 
@@ -68,6 +92,9 @@ class Register {
     this.passwordInput.value ='';
     this.repeatPasswordInput.value = '';
 
+    //Cuando guardemos los datos, querremos que resetee los errores
+    validator.resetValidator();
+
     }
 
 
@@ -81,6 +108,20 @@ class Register {
         this.repeatPasswordInput.addEventListener ('input', this.handleRepeatPasswordInput);
 
         this.buttonInput.addEventListener ('click', this.saveData);
+    }
+    //Crear los elementos HTML donde vamos a mostrar los errores
+    setErrorMessages = () => {
+        this.messageWrapper.innerHTML = "";
+
+        const errorObj = validator.getErrors();
+
+        const errorStrArr = Objetct.values(errorsObj);
+        //Para cada uno vamos a crear un párrafo
+        errorStrArr.forEach( (errorStr) => {
+            const errorMessageP = document.createElement("p");
+            errorMessageP.innerHTML = errorStr;
+            this.messageWrapper.appendChild(errorMessageP);
+        });
     }
 
 }
