@@ -55,8 +55,11 @@ saveData = (event) => {
 
     const newUser = new User(name, lastName, email, password);
 
-// Guardaremos el usuario en la base de datos
-//database.createNewUser = (newUser);
+// Guardaremos el usuario en la base de datos. Llámamos a database y creamos el nuevo usuario
+//database.createNewUser = (newUser); [esto era antes de crear el Database.js, lo substituimos por lo siguiente]
+
+db.saveNewUser(newUser);
+
 
 //Vaciar formulario
 this.nameInput.value = '';

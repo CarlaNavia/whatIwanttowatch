@@ -13,7 +13,7 @@ class Database {
             return usersArr;
         }
     }
-    
+
     //Método para guardar el nuevo usuario una vez que complete el formulario
     saveNewUser (newUser){
         const usersArr = this.getAllUsers();
@@ -27,4 +27,5 @@ class Database {
 
 }
 
+//Creando un nuevo objeto Database en la constante db para tener acceso al método getAllUsers y setAllUsers
 const db = new Database();
