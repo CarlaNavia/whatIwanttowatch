@@ -1,20 +1,21 @@
 "use strict";
+
 //Verificar email, constraseña...
 class Validator{
-constructor(){
-    this.invalidEmailError = "Please, enter a valid email";
-    this.emailExistsError = "This email is already registered";
-    this.passwordError = "The password must have minimum 7 characters";
-    this.repeatPasswordError = "Password do not match";
-    
-    //this.errors es un objeto que guardará los mensajes de arriba. No ponemos el error de email existente porque no hemos llamado a la Base de Datos para comprobarlo
-    this.errors = {
-        invalidEmailError: this.invalidEmailError,
-        passwordError: this.passwordError,
-        repeatPasswordError: this.repeatPasswordError
+    constructor(){
+        this.invalidEmailError = "Please, enter a valid email";
+        this.emailExistsError = "This email is already registered";
+        this.passwordError = "The password must have minimum 7 characters";
+        this.repeatPasswordError = "Password do not match";
+        
+        //this.errors es un objeto que guardará los mensajes de arriba. No ponemos el error de email existente porque no hemos llamado a la Base de Datos para comprobarlo
+        this.errors = {
+            invalidEmailError: this.invalidEmailError,
+            passwordError: this.passwordError,
+            repeatPasswordError: this.repeatPasswordError
+        }
     }
-}
-//Todo lo que queremos validar
+    //Todo lo que queremos validar
     validateValidEmail = (email) => {
         if(this.emailIsValid(email)) {
             delete this.errors.invalidEmailError
@@ -23,7 +24,7 @@ constructor(){
         }
     }
 
-//Verificar si el email que le ha introducido el usuario cumple con la especificación que ponemos en emailRegEx
+    //Verificar si el email que le ha introducido el usuario cumple con la especificación que ponemos en emailRegEx
     emailIsValid = (email) => {
         const emailRegEx = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,4})+$/;
 
@@ -31,7 +32,7 @@ constructor(){
         return isValid
     }
 
-//Comprobar si el email que ingresamos en el input es válido o no. Creamos una variable que sea igual al método que hemos creado en Database.js
+    //Comprobar si el email que ingresamos en el input es válido o no. Creamos una variable que sea igual al método que hemos creado en Database.js
     validateUniqueEmail = (newEmail) => {
         const userDb = db.getAllUsers
         //Comprobar que el array de getAllUsers haya vuelto con algo
@@ -52,7 +53,7 @@ constructor(){
         }
     }
 
-//La contraseña debe tener mínimo 7 carácteres
+    //La contraseña debe tener mínimo 7 carácteres
     validatePassword = (password) => {
         if (password.length > 6) {
             delete this.errors.passwordError;
@@ -72,7 +73,7 @@ constructor(){
     getErrors = () => {
         return this.errors;
     }
-//Cada vez que cargas la página, creamos un nuevo validator
+    //Cada vez que cargas la página, creamos un nuevo validator
     resetValidator = () => {    
         this.errors = {
             invalidEmailError: this.invalidEmailError,
@@ -81,5 +82,6 @@ constructor(){
         }
     }
 }
+
 //Crear nueva instancia para llamar a las funciones con Validator
 const validator = new Validator();

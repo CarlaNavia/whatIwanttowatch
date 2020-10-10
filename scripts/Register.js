@@ -1,9 +1,7 @@
 "use strict";
 
 class Register {
-
 // Definir todos los valores del formulario
-
     constructor(){ 
         this.nameInput = document.querySelector("#name");
         this.lastNameInput = document.querySelector("#lastName");
@@ -16,7 +14,6 @@ class Register {
 
     // Métodos para validar o manejar la información que insertamos en los inputs
     //no me funciona el target value... PREGUNTAR (min 21 del vídeo 1)
-
     handleEmailInput = (event) => {
         const email = event.target.value;
         //Invocaremos al objeto validator y después a su método validateValidEmail
@@ -109,6 +106,8 @@ class Register {
 
         this.buttonInput.addEventListener ('click', this.saveData);
     }
+
+    
     //Crear los elementos HTML donde vamos a mostrar los errores
     setErrorMessages = () => {
         this.messageWrapper.innerHTML = "";

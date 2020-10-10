@@ -1,8 +1,8 @@
 "use strict";
 //Guardar objetos o arrays en localstorage
 class Database {
-//Crear un método para recuperar a los usuarios de la base de datos. 
-//getAllUsers pasa a objeto de JS el texto que tenemos en localStorage y devuelve el array
+    //Crear un método para recuperar a los usuarios de la base de datos. 
+    //getAllUsers pasa a objeto de JS el texto que tenemos en localStorage y devuelve el array
     getAllUsers () {
         const usersStr = localStorage.getItem('users');
         const usersArr = JSON.parse(usersStr);

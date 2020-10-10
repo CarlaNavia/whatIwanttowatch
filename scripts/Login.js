@@ -1,14 +1,14 @@
 "use strict";
 
 class Login {
-//Creamos el constructor para definir propiedades
-constructor(){
-    this.emailInput = document.querySelector("#email");
-    this.passwordInput = document.querySelector("#password");
-    this.loginButtonInput = document.querySelector("#login-button");
-    this.messageContainer = document.querySelector(".message-container");
-}
-//Crear el método submit que es lo que ocurrirá cuando le demos al botón
+    //Creamos el constructor para definir propiedades
+    constructor(){
+        this.emailInput = document.querySelector("#email");
+        this.passwordInput = document.querySelector("#password");
+        this.loginButtonInput = document.querySelector("#login-button");
+        this.messageContainer = document.querySelector(".message-container");
+    }
+    //Crear el método submit que es lo que ocurrirá cuando le demos al botón
     submit = (event) => {
         event.preventDefault();
 
@@ -28,21 +28,21 @@ constructor(){
         this.showMessage(user);
     }
 
-//Crear el mensaje de confirmación de inicio de sesión o de error 
-showMessage = (user) => {
-    this.messageContainer.innerHTML = "";
+    //Crear el mensaje de confirmación de inicio de sesión o de error 
+    showMessage = (user) => {
+        this.messageContainer.innerHTML = "";
 
-    const message = document.createElement('p');
+        const message = document.createElement('p');
 
-    if (user) {
-        message.classList.add ("correct-message") //FALTA crear clase en css con la caja de color verde
-        message.innerHTML = `Hello, ${user.name}`; //cuando inicie sesión le aparecerá un mensaje de Hola+name
-    } else {
-        message.innerHTML = `The email or password is wrong`;
+        if (user) {
+            message.classList.add ("correct-message") //FALTA crear clase en css con la caja de color verde
+            message.innerHTML = `Hello, ${user.name}`; //cuando inicie sesión le aparecerá un mensaje de Hola+name
+        } else {
+            message.innerHTML = `The email or password is wrong`;
+        }
+        //Haremos que el contenedor se llene
+        this.messageContainer.appendChild(message);
     }
-    //Haremos que el contenedor se llene
-    this.messageContainer.appendChild(message);
-}
 
 
 
