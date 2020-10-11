@@ -7,7 +7,8 @@ class Validator{
         this.emailExistsError = "This email is already registered";
         this.passwordError = "The password must have minimum 7 characters";
         this.repeatPasswordError = "Password do not match";
-        
+        this.emptyRequiredFieldError = "You must complete all the fields before submit"
+
         //this.errors es un objeto que guardará los mensajes de arriba. No ponemos el error de email existente porque no hemos llamado a la Base de Datos para comprobarlo
         this.errors = {
             invalidEmailError: this.invalidEmailError,
@@ -70,6 +71,15 @@ class Validator{
             this.errors.repeatPasswordError = this.repeatPasswordError;
         }
     }
+
+    validateEmptyForm = (name, lastName, email, password) => {
+        if(name === "" || lastName === "" || email === "" || password === "" ) {
+            this.errors.emptyRequiredFieldError = this.emptyRequiredFieldError;
+        } else {
+            delete this.errors.emptyRequiredFieldError;
+        }
+    }
+
 
     getErrors = () => {
         return this.errors;

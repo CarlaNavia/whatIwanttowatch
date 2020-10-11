@@ -20,7 +20,7 @@ class Login {
         const password = this.passwordInput.value;
 
         //Queremos encontrar los datos que hemos dado en el submit en la base de datos y así poder iniciar sesión
-        const users = usersDB.find(user0 => {
+        const user = usersDB.find(user0 => {
             if(user0.email === email && user0.password === password) {
                 return true;
             }   
@@ -49,5 +49,4 @@ class Login {
 }
 
 const login = new Login();
-
 login.loginButton.addEventListener("click", login.submit);
