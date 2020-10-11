@@ -34,13 +34,14 @@ class Validator{
 
     //Comprobar si el email que ingresamos en el input es válido o no. Creamos una variable que sea igual al método que hemos creado en Database.js
     validateUniqueEmail = (newEmail) => {
-        const userDb = db.getAllUsers
+        const userDb = db.getAllUsers;
         //Comprobar que el array de getAllUsers haya vuelto con algo
-        if (userDb) {
-            let emailUnique = true;
-            //iterar todas las posiciones del array para que lo busque. En caso de que encuentre uno igual, cambiamos el valo de unique a false
-            userDb.forEach(user => {
-                if(user.email == newEmail){
+        
+        let emailUnique = true;
+         //iterar todas las posiciones del array para que lo busque. En caso de que encuentre uno igual, cambiamos el valo de unique a false
+        if (userDb.length > 0) {
+            userDb.forEach( (userObj) => {
+                if(userObj.email == newEmail){
                     emailUnique = false;
                 }
             });

@@ -107,14 +107,14 @@ class Register {
         this.buttonInput.addEventListener ('click', this.saveData);
     }
 
-    
+
     //Crear los elementos HTML donde vamos a mostrar los errores
     setErrorMessages = () => {
         this.messageWrapper.innerHTML = "";
 
         const errorObj = validator.getErrors();
 
-        const errorStrArr = Objetct.values(errorsObj);
+        const errorStrArr = Object.values(errorObj);
         //Para cada uno vamos a crear un párrafo
         errorStrArr.forEach( (errorStr) => {
             const errorMessageP = document.createElement("p");

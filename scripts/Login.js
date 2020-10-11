@@ -5,7 +5,7 @@ class Login {
     constructor(){
         this.emailInput = document.querySelector("#email");
         this.passwordInput = document.querySelector("#password");
-        this.loginButtonInput = document.querySelector("#login-button");
+        this.loginButton = document.querySelector("#login-button");
         this.messageContainer = document.querySelector(".message-container");
     }
     //Crear el método submit que es lo que ocurrirá cuando le demos al botón
@@ -50,4 +50,4 @@ class Login {
 
 const login = new Login();
 
-login.loginButton.addEventListener('click', login.submit);
+login.loginButton.addEventListener("click", login.submit);
