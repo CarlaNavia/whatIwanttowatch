@@ -1,32 +1,58 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The film hunting</title>
+	<meta charset="UTF-8">
+	<title>The film hunting</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     <link rel="stylesheet" href="css/main.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
-
 <body>
-    <header> 
-        <div>
-            <img src="images/Logo.jpg" alt="Logo" class="logo"/> 
-            <nav> <!---BARRA DE NAVEGACIÓN-->         
+    <header>
+	<i class="fa fa-bars bars-button" aria-hidden="true" id="bars-button"></i>
+	<div class="navbar">
+        <div class="contenido">
+            <nav class="bars">
                 <ul>
-                    <li><a href="home.html"> Home </a></li>
-                    <li><a href="apppage.html"> Films </a></li>
-                    <li><a href="register.html"> Register </a></li>
-                    <li><a href="login.html"> Log in </a></li>
-                    <li><a href="faq.html"> FaQ </a></li>
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="apppage.html">Search Page</a></li>
+                    <li><a href="register.html">Register</a></li>
+                    <li><a href="login.html">Log in</a></li>
+                    <li><a href="faq.html">FaQ</a></li>
                 </ul>
-            </nav> 
+            </nav>
+
+            <div class="title">
+                <a href="#">
+                	<img src="images/Logo.jpg" alt="logo" class="logo">
+                </a>
+            </div>
         </div>
+    </div>
+    <script>
+    	const limit_size_screen = window.matchMedia('screen and (max-width: 768px)');
+		const bars = document.querySelector('.bars');
+		const barsButton = document.querySelector('#bars-button');
 
-        <img src="" alt=""> 
-        <h1> What I want to watch? </h1> 
-        <form></form> <!---BUSCADOR DE TEXTO & CATEGORIA-->
-    </header>
+		function validation(event) {
+			if (event.matches) {
+				barsButton.addEventListener('click', hideShow);
+			} else {
+				barsButton.removeEventListener('click', hideShow);
+			}
+		}
+		validation(limit_size_screen);
 
+		function hideShow() {
+			if (bars.classList.contains('is-active')) {
+				bars.classList.remove('is-active');
+			} else {
+				bars.classList.add('is-active');
+			}
+		}
+    </script>
+</header>
     <main>
         <img> <!--Portada-->
         <h2></h2> <!--Título de la película-->

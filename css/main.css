@@ -8,6 +8,7 @@ html, body {
 	padding: 5px;
 	background-color: white;
   box-sizing: border-box;
+  border-bottom: 1px solid lightgray;
 }
 
 .navbar .contenido {
@@ -27,7 +28,7 @@ html, body {
 }
 .bars ul li a {
 	text-decoration: none;
-	color:#a2a3b7;
+	color: rgb(138, 54, 53);
 	transition: 1s;
 	text-transform: uppercase;
 }
@@ -52,13 +53,13 @@ div.title h2{
 	width: 40px;
 	height: 40px;
 	border-radius: 50%;
-	background-color: rgba(0, 0, 0, .8);
+	background-color: white;
 	display: none;
 	position: fixed;
 	z-index: 99;
 	left: 7px;
 	top: 11px;
-	color: #a2a3b7;
+	color: rgb(138, 54, 53);
 	cursor: pointer;
 }
 @media screen and (max-width: 768px) {
@@ -94,9 +95,9 @@ div.title h2{
 		padding: 5px;
 	}
 	.bars ul li a {
-		color: #000;
+		color: rgb(138, 54, 53);
 		font-weight: 700;
-		text-decoration: underline;
+		/*text-decoration: underline;*/
 	}
 	div.title h2 {
 		padding: 10.5px;
@@ -104,6 +105,6 @@ div.title h2{
 }
 
 .logo {
-  width: 70px;
-  padding: 10px;
+  width: 80px;
+  padding: 5px;
 }
