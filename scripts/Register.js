@@ -99,7 +99,7 @@ class Register {
   // Registrar métodos para cada uno de los inputs
   addListeners = () => {
     // En los inputs crear un evento. Para vincular lo que pasa en los inputs con las funciones que van a hacer algo con esos inputs
-    this.emailInput.addEventListener("input", this.handleEmailInput);
+    this.emailInput.addEventListener(`input`, this.handleEmailInput);
 
     this.passwordInput.addEventListener(
       "input",

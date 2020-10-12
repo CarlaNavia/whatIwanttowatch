@@ -22,9 +22,8 @@
                     <li><a href="faq.html">FaQ</a></li>
                 </ul>
             </nav>
-
             <div class="title">
-                <a href="#">
+                <a href="home.html">
                 	<img src="images/Logo.jpg" alt="logo" class="logo">
                 </a>
             </div>
@@ -53,49 +52,62 @@
 		}
     </script>
 </header>
+
+<!--TITULO-->
 <!--IMAGEN DE FONDO-->
 <!--BUSCADOR DE TEXTO-->
 
-    <main>
+    <main class="popcorn_background">
+        <div>
+            <form class="form_auth">
+                <p> Are you looking for a special movie? </p>
+                    <input id="searcher" type="text" placeholder="Movie title...">
+                <input class ="auth_button" id="buttonSearch" type="submit" value="GO!">
+            </form>
+         </div>
         <section>
             <div>
-                <p>FINALIDAD</p>
+                <p>OUR MISSION</p>
+                <article> mission </article>
             </div> 
             <div>
-                <p>NO ENCUENTRAS LA PELI¿?</p>
+                <h2>TROUBLES TO FIND A MOVIE?</h2>
+                <p> troubles </p>
             </div> 
             <div>
-                <p>COMPARTE TU EXPERIENCIA</p>
+                <p>SHARE YOUR EXPERIENCE</p>
+                <article> </article>
             </div> 
             <div>
-                <p>CONÓCENOS</p>
+                <p>CONTACT US</p>
+                <article> </article>
             </div> 
          </section>
     </main>
 
-</body>
+    <footer>
+        <div>
+            
+            <!--<ul>
+                <li>
+                    <img> 
+                    <a href="www.instagram.com"/>
+                </li>
+                <li>
+                    <img>
+                    <a href="www.twitter.com"/>
+                </li>
+                <li>
+                    <img> 
+                    <a href="www.facebook.com"/>
+                </li>
+            </ul>-->
+            <!--<img src="images/Logo.jpg" alt="logo" class="logo"/> -->
+            <p>Carla Navia</p> <!---CONTACTO, COPYRIGHT-->
+        </div>
+    </footer>
+    <script src="scripts/MovieDbApiService.js"></script>
 
-<footer>
-    <div>
-        
-        <ul>
-            <li>
-                <img> <!--Logo instagram-->
-                <a href="www.instagram.com"/>
-            </li>
-            <li>
-                <img> <!--Logo Twitter-->
-                <a href="www.twitter.com"/>
-            </li>
-            <li>
-                <img> <!--Logo Facebook-->
-                <a href="www.facebook.com"/>
-            </li>
-        </ul>
-        <!--<img src="images/Logo.jpg" alt="logo" class="logo"/> -->
-        <p></p> <!---CONTACTO, COPYRIGHT-->
-    </div>
-</footer>
-<script src="scripts/MovieDbApiService.js"></script>
+</body>
 
 </html>

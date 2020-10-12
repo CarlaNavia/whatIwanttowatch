@@ -26,6 +26,13 @@ class Database {
         localStorage.setItem('users', usersStr)
     }
 
+  
+
+    getSearchText(){}  
+    
+    saveSearchText(newSearch){
+         
+    }
 }
 
 //Creando un nuevo objeto Database en la constante db para tener acceso al método getAllUsers y setAllUsers
