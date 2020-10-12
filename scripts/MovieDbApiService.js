@@ -16,14 +16,19 @@ const getMovieUrl = `${BASE_URL}movie/`;
 
 //La crida de la API per tenir el llistat de pelis que s'estàn buscant per text
 const getMovies = (searchText) => {
+  const movie = document.querySelector(".movie")
   fetch(`${getMoviesUrl}${searchText}`)
     .then((response) => response.json())
     .then((data) =>
-      console.log(
+      
         data.results.map((oneMovie) => {
-          return oneMovie;
+          const eachMovie = document.createElement("div")
+          eachMovie.innerHTML = `<div class="target"><h1>${oneMovie.original_title}</h1>
+          <img src="https://image.tmdb.org/t/p/w500${oneMovie.poster_path}"/></div>`
+          
+          movie.appendChild(eachMovie)
         })
-      )
+      
     );
 };
 

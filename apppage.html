@@ -56,13 +56,18 @@
 
     <main>
         <div>
-            <img> <!--Portada-->
-            <h2></h2> <!--Título de la película-->
-            <p></p> <!--sinopsis-->
-            <button></button><!--See more-->
-        </div>
-    </main>
+            <form class="form_auth">
+                <p> Are you looking for a special movie? </p>
+                    <input id="searcher" type="text" placeholder="Movie title...">
+                <input class ="auth_button" id="buttonSearch" type="submit" value="GO!">
+            </form>
+         </div>
 
+        <div class="movie">
+        </div>
+
+    </main>
+<script src="scripts/MovieDbApiService.js"></script>
 </body>
 
 <footer>

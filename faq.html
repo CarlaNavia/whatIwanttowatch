@@ -58,22 +58,39 @@
         <h2>Frequently Asked Questions</h2> <!--Preguntas Frecuentes-->
         <section> 
             <div>
-                <p>Account</p>
-                <div></div> <!--Log out button-->
-                <div></div> <!--¿Cómo puedo guardar una peli que me gusta?-->
-            </div>
-            <div>
-                <p>Films</p>
-                <div></div> <!--Don't find the film-->
-                <div></div> <!--Wrong details-->
-            </div>
-            <div>
-                <p>Others</p>
-                <div></div> <!--How can suggest you an idea?-->
-                <div></div> <!--How can I share my experience?-->
-            </div>
+                <h3>Account</h3>
+                <button type="button" class="collapsible">Where is the log out button?</button>
+                <div class="content">
+                  <p>There is no log out button, once you close the window your account will be automatically logged out.</p>
+                </div>
+                <button type="button" class="collapsible">Could I save my favourite films?</button>
+                <div class="content">
+                  <p>Not yet, but we promise you that we are working on it and it will be the next update. Thank you for your patience.</p>
+                </div>
+
+                <h3>Films</h3>
+                <button type="button" class="collapsible">I cannot find the film...</button>
+                <div class="content">
+                  <p>In case that you miss some movie, please, let us know and we will try to update the website including all the details.</p>
+                </div>
+                <button type="button" class="collapsible">There are some errors...</button>
+                <div class="content">
+                  <p>We will be glad to receive your feedback in case that you note any mistake.</p>
+                </div>
+
+                <h3>Others</h3>
+                <button type="button" class="collapsible">How can I suggest you an idea?</button>
+                <div class="content">
+                  <p>You can send us an email to customer@thefilmhunting.com and we will be glad to reply you as soon as possible.</p>
+                </div>
+                <button type="button" class="collapsible">How can I share my experience?</button>
+                <div class="content">
+                  <p>You can use #thefilmhunting to share your experience in Instagram or Twitter.</p>
+                </div>
+          
         </section>
     </main>
+    <script src="scripts/Faq.js"></script>
 </body>
 
 <footer>
@@ -82,11 +99,6 @@
     <a></a><!---RRSS-->
 </footer>
 
-<script src="scripts/Database.js"></script>
-<script src="scripts/Login.js"></script>
-<script src="scripts/MovieDbApiService.js"></script>
-<script src="scripts/Register.js"></script>
-<script src="scripts/User.js"></script>
-<script src="scripts/Validator.js"></script>
+
 
 </html>
