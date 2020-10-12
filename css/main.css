@@ -155,11 +155,11 @@ div.title h2{
 .form_auth{
 background-color: white;
 border: 3px solid white;
-border-radius: 2rem;
+border-radius: 1.5rem;
 display: flex;
 flex-direction: column;
 align-items: center;
-padding: 3rem;
+padding: 1.5rem;
 width: 200px;
 color: rgb(138, 54, 53);
 
@@ -175,10 +175,9 @@ color: rgb(138, 54, 53);
 	align-self: center;	
 }
 
-
 .collapsible {
-	background-color: #eee;
-	color: #444;
+	background-color: #d8c593;
+	color: #31112c;
 	cursor: pointer;
 	width: 100%;
 	border: none;
@@ -189,17 +188,15 @@ color: rgb(138, 54, 53);
     margin-top: .6rem;
   }
   
-  
   .active, .collapsible:hover {
-	background-color: #ccc;
+	background-color: #d8c593
   }
-  
   
   .content {
 	padding: 0px 18px;
 	display: none;
 	overflow: hidden;
-	background-color: #f1f1f1;
+	background-color: #fff4e1;
   }
 
   .collapsible:after {
@@ -213,3 +210,19 @@ color: rgb(138, 54, 53);
   .active:after {
 	content: "\2796"; 
   }
+
+.half{
+    width: 95%;
+	padding: 10px;
+}
+
+h2{
+	color: rgb(121, 56, 55);
+	text-align: center;
+	
+}
+
+h3{
+	color: rgb(121, 56, 55);
+	margin-bottom: 0px;
+}
