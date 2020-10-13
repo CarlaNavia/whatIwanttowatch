@@ -23,8 +23,10 @@ const getMovies = (searchText) => {
       
         data.results.map((oneMovie) => {
           const eachMovie = document.createElement("div")
-          eachMovie.innerHTML = `<div class="target"><h1>${oneMovie.original_title}</h1>
-          <img src="https://image.tmdb.org/t/p/w500${oneMovie.poster_path}"/></div>`
+          eachMovie.innerHTML = `<div class="target">
+            <img src="https://image.tmdb.org/t/p/w500${oneMovie.poster_path}"/>
+            <h5>${oneMovie.original_title}</h5>
+          </div>`
           
           movie.appendChild(eachMovie)
         })
