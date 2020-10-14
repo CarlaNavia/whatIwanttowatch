@@ -1,31 +1,33 @@
-const buttonSearcher = document.querySelector("#buttonSearch");
 
+//Crear les 4 variables de la API
+const BASE_URL = 'https://api.themoviedb.org/3/';
+const API_KEY = '01f37d24238fcae1de083c92988ee412';
+const getMoviesUrl = `${BASE_URL}search/movie?api_key=${API_KEY}&query=`;
+const getMovieUrl = `${BASE_URL}movie/`;
+
+//Linkar el botó "GO!" amb el js
+const buttonSearcher = document.querySelector("#buttonSearch");
 buttonSearcher.addEventListener("click", (event) => {
   event.preventDefault()
   const form = document.querySelector("#searcher").value;
   getMovies(form)
  })
 
-const BASE_URL = 'https://api.themoviedb.org/3/';
-const API_KEY = '01f37d24238fcae1de083c92988ee412';
-const getMoviesUrl = `${BASE_URL}search/movie?api_key=${API_KEY}&query=`;
-const getMovieUrl = `${BASE_URL}movie/`;
-
 //La crida de la API per tenir el llistat de pelis que s'estàn buscant per text
 const getMovies = (searchText) => {
-  const movie = document.querySelector(".movie")
+  const movie = document.querySelector(".movie") //Linkar el div on estará la capsa d'informació (seria millor dir-li "movies")
   fetch(`${getMoviesUrl}${searchText}`)
     .then((response) => response.json())
     .then((data) =>{
         movie.innerHTML = ""; //para que borre la búsqueda anterior y no acumule los resultados
-        data.results.map((oneMovie) => {
-          const eachMovie = document.createElement("div")
-          eachMovie.innerHTML = `<div class="target">
+        data.results.map((oneMovie) => { //la API em dóna un objecte amb un paràmetre que es diu results i cada objecte li dic oneMovie (inventat per mi)
+          const eachMovie = document.createElement("div") //Estic creant un div dins del div movie del HTML
+          eachMovie.innerHTML = `<div class="target"> 
             <img src="https://image.tmdb.org/t/p/w500${oneMovie.poster_path}"/>
             <h5>${oneMovie.original_title}</h5>
             <input class ="showmore" id="showmore" type="click" value="Show more">
           </div>`
-          movie.appendChild(eachMovie)
+          movie.appendChild(eachMovie) //Afegir dintre del div ja creat "movie" el nou div "eachMovie"
         }) }
       
     );
@@ -35,22 +37,22 @@ const getMovies = (searchText) => {
 
 //La crida de la API per tenir el detall de la peli
 const getMovie = (id) => {
-  const sinopsis = document.querySelectorAll(".sinopsis")
+  const sinopsis = document.querySelector(".sinopsis")
   fetch(`${getMovieUrl}${id}?api_key=${API_KEY}`)
     .then((response) => response.json())
-    .then((data) => 
+    .then((data) => {
+console.log(data)
 
-        data.results.map((oneMovie) => {
+
           const detailed = document.createElement("div");
-          detailed.innerHTML = `<div> <img src="https://image.tmdb.org/t/p/w500${oneMovie.poster_path}"/>
-          <h5>${oneMovie.original_title}</h5> </div>`
-
+          detailed.innerHTML = `<div> <img src="https://image.tmdb.org/t/p/w500${data.poster_path}"/>
+          <h5>${data.original_title}</h5> </div>`
           sinopsis.appendChild(detailed)
-        })
-    
+        
+    } 
     );
 
-};
+};getMovie(554)
 
 
 
