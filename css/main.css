@@ -99,7 +99,6 @@ div.title h2{
 	.bars ul li a {
 		color: rgb(138, 54, 53);
 		font-weight: 700;
-		/*text-decoration: underline;*/
 	}
 	div.title h2 {
 		padding: 10.5px;
@@ -109,6 +108,7 @@ div.title h2{
 .logo {
   width: 80px;
   padding: 5px;
+  margin-right: 0px;
 }
 
 .auth-form {
@@ -276,14 +276,29 @@ h3{
 	background-color: #fff4e1;;
     padding: 2rem;
 	margin: .6rem;
+	
 } 
 
 .popcorn{
     background: url(../images/register.jpeg) no-repeat center center /cover;
     height:60vh;
-    position: relative;
+	position: relative;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+	align-content: center;
+	text-align: center;
 }
-/*@media screen and (max-width: 768px) {
+
+.divhome{
+	display: flex;
+	flex-direction: column;
+	align-content: center;
+}
+
+@media screen and (min-width: 768px) {
 	.divhome{
 	display: flex;
 	flex-direction: row;
@@ -292,8 +307,11 @@ h3{
 	align-items: center;
 	align-content: center;
 	
+}
+	
 
-}}*/
+}
+
 
 .showmore{
 	margin-top: 5px;
@@ -311,6 +329,21 @@ h3{
 	
 }
 
+.title{
+width: 300px;
+height: auto;
+background-color: white;
+border-radius: 2rem;
+}
 
+.h2title {
+	font-size: 20px;
+	font-style: italic;
+    text-align: center;
+    font-weight: 600;
+    width: 100%;
+    padding-top: 4rem;
+	color: rgb(121, 56, 55);
+}
 
 
