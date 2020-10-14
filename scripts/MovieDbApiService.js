@@ -19,7 +19,7 @@ const getMovies = (searchText) => {
           eachMovie.innerHTML = `<div class="target"> 
             <img src="https://image.tmdb.org/t/p/w500${oneMovie.poster_path}"/>
             <h5>${oneMovie.original_title}</h5>
-            <input class ="showmore" id="showmore" type="click" value="Show more">
+            <a href="filmpage.html?id=${oneMovie.id}" class="showmore">Show more</a>
           </div>`
           movie.appendChild(eachMovie) //Afegir dintre del div ja creat "movie" el nou div "eachMovie"
         }) }
@@ -44,16 +44,7 @@ console.log(data)
     } 
     );
 
-};getMovie(554)
-
-
-
-
-
-
-
-
-
+};
 
 
 
