@@ -1,4 +1,3 @@
-
 const buttonSearcher = document.querySelector("#buttonSearch");
 
 buttonSearcher.addEventListener("click", (event) => {
@@ -7,20 +6,18 @@ buttonSearcher.addEventListener("click", (event) => {
   getMovies(form)
  })
 
-
 const BASE_URL = 'https://api.themoviedb.org/3/';
 const API_KEY = '01f37d24238fcae1de083c92988ee412';
 const getMoviesUrl = `${BASE_URL}search/movie?api_key=${API_KEY}&query=`;
 const getMovieUrl = `${BASE_URL}movie/`;
-
 
 //La crida de la API per tenir el llistat de pelis que s'estàn buscant per text
 const getMovies = (searchText) => {
   const movie = document.querySelector(".movie")
   fetch(`${getMoviesUrl}${searchText}`)
     .then((response) => response.json())
-    .then((data) =>
-      
+    .then((data) =>{
+        movie.innerHTML = ""; //para que borre la búsqueda anterior y no acumule los resultados
         data.results.map((oneMovie) => {
           const eachMovie = document.createElement("div")
           eachMovie.innerHTML = `<div class="target">
@@ -28,9 +25,8 @@ const getMovies = (searchText) => {
             <h5>${oneMovie.original_title}</h5>
             <input class ="showmore" id="showmore" type="click" value="Show more">
           </div>`
-          
           movie.appendChild(eachMovie)
-        })
+        }) }
       
     );
 };
