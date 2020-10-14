@@ -26,6 +26,7 @@ const getMovies = (searchText) => {
           eachMovie.innerHTML = `<div class="target">
             <img src="https://image.tmdb.org/t/p/w500${oneMovie.poster_path}"/>
             <h5>${oneMovie.original_title}</h5>
+            <input class ="showmore" id="showmore" type="click" value="Show more">
           </div>`
           
           movie.appendChild(eachMovie)
@@ -38,9 +39,21 @@ const getMovies = (searchText) => {
 
 //La crida de la API per tenir el detall de la peli
 const getMovie = (id) => {
+  const sinopsis = document.querySelectorAll(".sinopsis")
   fetch(`${getMovieUrl}${id}?api_key=${API_KEY}`)
     .then((response) => response.json())
-    .then((data) => console.log(data));
+    .then((data) => 
+
+        data.results.map((oneMovie) => {
+          const detailed = document.createElement("div");
+          detailed.innerHTML = `<div> <img src="https://image.tmdb.org/t/p/w500${oneMovie.poster_path}"/>
+          <h5>${oneMovie.original_title}</h5> </div>`
+
+          sinopsis.appendChild(detailed)
+        })
+    
+    );
+
 };
 
 
