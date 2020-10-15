@@ -425,3 +425,24 @@ footer {
 		margin-bottom: 70px;
 	}
 }
+
+.message-container{
+    width: 100%;
+    max-width: 800px;
+}
+
+
+.message-container p{
+    background-color: var(--red-color);
+    padding: 20px;
+    margin: 10px 0;
+    color: rgb(121, 56, 55);
+    border-radius: 5px;
+	box-shadow: 0 0 10px rgb(121, 56, 55);
+	font-size: 13px;
+}
+
+.message-container p.correct-message {
+    background-color: rgb(38, 131, 75);
+    box-shadow: 0 0 10px #dbf1c1;
+}

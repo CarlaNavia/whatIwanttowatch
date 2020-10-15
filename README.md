@@ -1,7 +1,7 @@
 # The film hunting
 
 ## Description
-The film hunting is a film searcher to find different options according to your needs. There you could filter by different categories or if you are looking for a special film you just need to add the title and you will see all the details about it.
+The film hunting is a film searcher to find different options according to your needs. It is really easy to look for a movie, you just need to add the title or some key words realted with the film and press the button "GO!". Then, you will see a list with the suggested films according to your search.
 
 Don't miss the oportunity to test it and to know which is your suitable film in different times. 
 
@@ -48,4 +48,5 @@ https://trello.com/b/7O5BKWbe/m1-ironhack
 
 ### Slides
 URls for the project presentation (slides)
-[Link Slides.com](http://slides.com)
+[Link Slides.com](https://docs.google.com/presentation/d/1965h4nJiIfdG__avXDT32gLXpxb9DVSdtMw9wFZuIrQ/edit?usp=sharing)
+
