@@ -37,8 +37,11 @@ console.log(data)
 
 
           const detailed = document.createElement("div");
-          detailed.innerHTML = `<div> <img src="https://image.tmdb.org/t/p/w500${data.poster_path}"/>
-          <h5>${data.original_title}</h5> </div>`
+          detailed.innerHTML = `<div> <h2 class="h2film">${data.original_title}</h2> <p class="tagline">${data.tagline}</p>
+          <div class="flex"> <img class="imgsinopsis" src="https://image.tmdb.org/t/p/w500${data.poster_path}"/>
+          
+           <p class="poverview">${data.overview}</p> </div>
+          </div>`
           sinopsis.appendChild(detailed)
         
     } 

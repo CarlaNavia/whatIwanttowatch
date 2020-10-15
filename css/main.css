@@ -361,4 +361,67 @@ footer {
 	text-align: center;
 }
 
+.imgsinopsis {
+	width: 200px;
+	margin-left: auto;
+	margin-right: auto;
+	display:block;
 
+}
+
+.h2film {
+	color: rgb(121, 56, 55);
+	text-align: center;
+	margin-bottom:0px;
+}
+
+.tagline{
+	font-style: italic;
+	color: #d8c593;
+	font-size: 20px;
+	text-align: center;
+	margin-top: 0px;
+}
+
+.poverview {
+	text-align: center;
+	padding: 15px;
+	margin: 15px;
+}
+
+@media screen and (min-width: 768px) {
+	.imgsinopsis {
+		width: 250px;
+		margin:0px;
+	}
+	
+	.h2film {
+		color: rgb(121, 56, 55);
+		text-align: center;
+		margin-bottom:0px;
+	}
+	
+	.tagline{
+		font-style: italic;
+		color: #d8c593;
+		font-size: 20px;
+		text-align: center;
+		margin-top: 0px;
+	}
+	
+	.poverview {
+		text-align: center;
+		width: 250px;
+	
+		
+	}
+	.flex {
+		display: flex;
+		flex-direction: row;
+		flex-wrap: nowrap;
+		justify-content: center;
+		align-items: center;
+		align-content: center;
+		margin-bottom: 70px;
+	}
+}
